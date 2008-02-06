@@ -28,6 +28,7 @@
   <target name="deploy">
      <ant dir="clustering-carrot2" target="deploy"/>
      <ant dir="creativecommons" target="deploy"/>
+     <ant dir="cclearn" target="deploy"/>
      <ant dir="index-basic" target="deploy"/>
      <ant dir="index-more" target="deploy"/>
      <ant dir="languageidentifier" target="deploy"/>
@@ -83,6 +84,7 @@
   <target name="test">
     <parallel threadCount="2">
      <ant dir="creativecommons" target="test"/>
+     <ant dir="cclearn" target="test"/>
      <ant dir="languageidentifier" target="test"/>
      <ant dir="lib-http" target="test"/>
      <ant dir="ontology" target="test"/>
@@ -116,6 +118,7 @@
     <ant dir="analysis-fr" target="clean"/>
     <ant dir="clustering-carrot2" target="clean"/>
     <ant dir="creativecommons" target="clean"/>
+    <ant dir="cclearn" target="clean"/>
     <ant dir="index-basic" target="clean"/>
     <ant dir="index-more" target="clean"/>
     <ant dir="languageidentifier" target="clean"/>
