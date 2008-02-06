@@ -63,6 +63,7 @@ public class CCIndexingFilter implements IndexingFilter {
 
       // add the entire license as cc:license=xxx
       addFeature(doc, "license=" + licenseUrl);
+      addField(doc, "license", licenseUrl);
 
       // index license attributes extracted of the license url
       addUrlFeatures(doc, licenseUrl);
@@ -109,7 +110,11 @@ public class CCIndexingFilter implements IndexingFilter {
   }
   
   private void addFeature(Document doc, String feature) {
-    doc.add(new Field(FIELD, feature, Field.Store.YES, Field.Index.UN_TOKENIZED));
+    this.addField(doc, FIELD, feature);
+  }
+
+  private void addField(Document doc, String key, String value) {
+    doc.add(new Field(key, value, Field.Store.YES, Field.Index.UN_TOKENIZED));
   }
 
   public void setConf(Configuration conf) {
