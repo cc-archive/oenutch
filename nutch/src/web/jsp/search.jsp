@@ -132,29 +132,11 @@
 %>
 <%@ taglib uri="http://jakarta.apache.org/taglibs/i18n" prefix="i18n" %>
 <i18n:bundle baseName="org.nutch.jsp.search"/>
-<html lang="<%= language %>">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<head>
-<title>Nutch: <i18n:message key="title"/></title>
-<link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
-<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
-<link rel="alternate" type="application/rss+xml" title="RSS" href="<%=rss%>"/>
-<jsp:include page="include/style.html"/>
-<jsp:include page="cc/style.html"/>
-<base href="<%= base  + "/" + language %>/">
-<script type="text/javascript">
-<!--
-function queryfocus() { document.search.query.focus(); }
-// -->
-</script>
-</head>
 
-<body onLoad="queryfocus();">
-
-<jsp:include page="<%= language + "/include/header.html"%>"/>
+<%@ include file="./header.jsp" %>
 
 <div id="searchui" class="box">
- <form name="search" action="../search.jsp" method="get">
+ <form name="search" action="./search.jsp" method="get">
  <div id="search-base">
  <input id="q" name="query" size=44 value="<%=htmlQueryString%>">
  <input type="hidden" name="hitsPerPage" value="<%=hitsPerPage%>">
@@ -313,10 +295,6 @@ if ((!hits.totalIsExact() && (hits.getLength() <= start+hitsPerPage))) {
 </font></a></td></tr>
 </table>
 
-<p>
-<a href="http://wiki.apache.org/nutch/FAQ">
-<img border="0" src="../img/poweredbynutch_01.gif">
-</a>
 </div></div>
 
 <jsp:include page="/include/footer.html"/>

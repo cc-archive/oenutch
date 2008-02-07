@@ -53,19 +53,14 @@
 %>
 <%@ taglib uri="http://jakarta.apache.org/taglibs/i18n" prefix="i18n" %>
 <i18n:bundle baseName="org.nutch.jsp.explain"/>
-<html lang="<%= language %>">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<head>
-<title>Nutch: <i18n:message key="title"/></title>
-<jsp:include page="/include/style.html"/>
-<base href="<%= base  + "/" + language %>/">
-</head>
 
-<body>
+<%@ include file="./header.jsp" %>
 
-<jsp:include page="<%= language + "/include/header.html"%>"/>
+<div class="box content">
+     <div id="search-options" style="border:none;">&nbsp;</div>
+     <div id="results">
 
-<h3><i18n:message key="page"/></h3>
+<h2><i18n:message key="page"/></h2>
 
 <%=bean.getDetails(hit).toHtml()%>
 
@@ -75,6 +70,8 @@
 </h3>
 
 <%=bean.getExplanation(query, hit)%>
+
+</div></div>
 
 <jsp:include page="/include/footer.html"/>
 
