@@ -173,7 +173,7 @@ public class DeleteDuplicates extends ToolBase
         throws IOException {
 
         // skip deleted documents
-        while (indexReader.isDeleted(doc) && doc < maxDoc) doc++;
+        while (doc < maxDoc && indexReader.isDeleted(doc)) doc++;
         if (doc >= maxDoc)
           return false;
 
