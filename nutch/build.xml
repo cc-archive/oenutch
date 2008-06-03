@@ -93,7 +93,9 @@
 	<target name="compile" depends="compile-core, compile-plugins" />
 
 	<target name="compile-core" depends="init">
-		<javac encoding="${build.encoding}" srcdir="${src.dir}" includes="org/creativecommons/learn/**/*.java org/apache/nutch/**/*.java" destdir="${build.classes}" debug="${javac.debug}" optimize="${javac.optimize}" target="${javac.version}" source="${javac.version}" deprecation="${javac.deprecation}">
+		<javac encoding="${build.encoding}" srcdir="${src.dir}" 
+			includes="org/creativecommons/learn/**/*.java org/apache/nutch/**/*.java thewebsemantic/**/*.java" 
+			destdir="${build.classes}" debug="${javac.debug}" optimize="${javac.optimize}" target="${javac.version}" source="${javac.version}" deprecation="${javac.deprecation}">
 			<classpath refid="classpath" />
 		</javac>
 	</target>
@@ -138,6 +140,7 @@
 			<zipfileset dir="${conf.dir}" excludes="*.template" />
 			<zipfileset dir="${lib.dir}" prefix="lib" includes="**/*.jar" excludes="hadoop-*.jar" />
 			<zipfileset dir="${build.plugins}" prefix="plugins" />
+			<zipfileset dir="${src.dir}" includes="**/*.properties" />
 		</jar>
 	</target>
 
