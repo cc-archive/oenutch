@@ -138,8 +138,8 @@
 <%@ include file="./header.jsp" %>
 
 <div id="searchui" class="box">
- <form name="search" action="./search.jsp" method="get">
  <div id="search-base">
+ <form name="search" action="./search.jsp" method="get">
  <input id="q" name="query" size=44 value="<%=htmlQueryString%>">
  <input type="hidden" name="hitsPerPage" value="<%=hitsPerPage%>">
  <input type="hidden" name="lang" value="<%=language%>">
@@ -149,9 +149,7 @@
     <label for="clustbox"><i18n:message key="clustering"/></label>
  <% } %>
  <a href="http://wiki.creativecommons.org/Universal_Education_Search_FAQ">help</a>
-</div>
  </form>
-</div>
 
 <%--
 // Uncomment this to enable query refinement.
@@ -194,15 +192,18 @@
 out.flush();
 %>
 
-<div class="box">
-     <div id="search-options" style="border:none;">&nbsp;</div>
-     <div id="results">
 
 <i18n:message key="hits">
   <i18n:messageArg value="<%=new Long((end==0)?0:(start+1))%>"/>
   <i18n:messageArg value="<%=new Long(end)%>"/>
   <i18n:messageArg value="<%=new Long(hits.getTotal())%>"/>
 </i18n:message>
+</div>
+</div>
+
+<div class="box">
+
+     <div id="results">
 
 <% if (clustering.equals("yes") && length != 0) { %>
 <table border=0 cellspacing="3" cellpadding="0">
