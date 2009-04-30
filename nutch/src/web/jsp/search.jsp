@@ -148,7 +148,7 @@
    <input id="clustbox" type="checkbox" name="clustering" value="yes" <% if (clustering.equals("yes")) { %>CHECKED<% } %>>
     <label for="clustbox"><i18n:message key="clustering"/></label>
  <% } %><br/>
-  <a href="http://wiki.creativecommons.org/DiscoverEd_FAQ">learn more
+  <a href="http://wiki.creativecommons.org/DiscoverEd_FAQ">Learn more
   about DiscoverEd</a>
  </form>
 
