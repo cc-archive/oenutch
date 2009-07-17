@@ -149,7 +149,8 @@
     <label for="clustbox"><i18n:message key="clustering"/></label>
  <% } %><br/>
   <a href="http://wiki.creativecommons.org/DiscoverEd_FAQ">Learn more
-  about DiscoverEd</a>
+  about DiscoverEd</a><br/>
+  <a href="mailto:cclearn-info@creativecommons.org">Please give us feedback!</a>
  </form>
 
 <%--
